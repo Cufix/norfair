@@ -310,6 +310,7 @@ class TrackedObject:
         # real detection this creates a huge velocity vector in our KalmanFilter
         # and causes the tracker to start with wildly inaccurate estimations which
         # eventually coverge to the real detections.
+        '''
         detected_at_least_once_mask = np.array(
             [[m, m] for m in self.detected_at_least_once_points]
         ).flatten()
@@ -317,6 +318,7 @@ class TrackedObject:
         self.detected_at_least_once_points = np.logical_or(
             self.detected_at_least_once_points, points_over_threshold_mask
         )
+        '''
 
     def __repr__(self):
         if self.last_distance is None:
